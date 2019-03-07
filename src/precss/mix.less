@@ -20,10 +20,24 @@ body{
 a{
 	text-decoration: none;
 	color:inherit;
+	cursor: pointer;
+	&:hover{
+		text-decoration: underline;
+	}
+	&:active{
+		color: @rosepink;
+	}
+	&:visited{
+		color: darksalmon;
+	}
+	&>.icon:hover{
+		fill: @rosepink;
+	}
 }
 ul{
 	list-style: none;
 	padding: 0;
+	margin: 0;
 }
 h2, .h2{
 		margin:50px auto 20px;

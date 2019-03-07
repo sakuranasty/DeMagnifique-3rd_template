@@ -311,10 +311,24 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active {
+  color: #eb4c81;
+}
+a:visited {
+  color: darksalmon;
+}
+a > .icon:hover {
+  fill: #eb4c81;
 }
 ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 h2,
 .h2 {
@@ -358,20 +372,41 @@ h2,
     margin: 30px auto 20px;
   }
 }
+html {
+  overflow-x: hidden;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+svg {
+  height: 100%;
+}
 .icon {
   width: 20px;
   height: 20px;
   margin-right: 10px;
 }
 .logo {
-  width: calc(100% / 12 * 3 - 20px);
-  height: 100px;
+  flex-basis: calc(1280px / 12 * 3 - 20px);
+  max-height: 80px;
+  display: flex;
+  align-items: end;
+}
+.logo svg {
+  max-width: 80px;
+  flex-grow: 0;
+  max-height: 80px;
+}
+.logo figcaption {
+  order: 1;
+  padding-left: 5px;
 }
 figure {
   margin: 0;
-}
-svg {
-  height: 100%;
 }
 .common {
   display: flex;
@@ -379,10 +414,13 @@ svg {
   justify-content: space-between;
   background-color: #f4f4f4;
   align-items: center;
+  position: relative;
+  padding: 10px 0;
 }
 .common-nav,
 .common .social {
   display: flex;
+  align-items: end;
 }
 .common .hamburger {
   display: none;
@@ -412,10 +450,10 @@ svg {
 header .info,
 .header .info {
   background: white;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr 1fr;
+  column-gap: 20px;
   padding: 15px 0;
   box-sizing: border-box;
 }
@@ -426,81 +464,86 @@ header .info .hamburger,
 header .info .logo,
 .header .info .logo {
   fill: #3e69c9;
-  width: calc(1280px / 12 * 2 - 20px);
+  grid-column: 1 / span 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
 }
-header .info .logo svg,
-.header .info .logo svg {
-  width: 100%;
+header .info .logo figcaption div,
+.header .info .logo figcaption div {
+  margin-bottom: 10px;
+}
+header .info address,
+.header .info address,
+header .info .addres,
+.header .info .addres {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  grid-column: 4 / span 6;
+}
+header .info address a,
+.header .info address a,
+header .info .addres a,
+.header .info .addres a {
+  margin-right: 10px;
 }
 header .info form,
 .header .info form {
-  width: calc(1280px / 12 * 5 - 20px);
-  padding: 0 5px;
+  grid-column: 4 / span 6;
+  grid-row-start: 2;
   position: relative;
   text-align: left;
   font-size: 16px;
-}
-header .info form address,
-.header .info form address,
-header .info form .addres,
-.header .info form .addres {
-  margin-bottom: 10px;
   display: flex;
-  align-items: baseline;
+  margin-top: 10px;
 }
-header .info form address span,
-.header .info form address span,
-header .info form .addres span,
-.header .info form .addres span {
-  margin-right: 10px;
-}
-header .info form input,
-.header .info form input {
+header .info input,
+.header .info input {
   width: calc(100% - 90px);
   box-sizing: border-box;
-  height: 42px;
 }
-header .info form button,
-.header .info form button {
+header .info button,
+.header .info button {
   width: 80px;
   border: none;
   box-sizing: border-box;
   padding: 5px;
-  height: 42px;
-  position: absolute;
 }
-header .info form img,
-.header .info form img {
+header .info .icon,
+.header .info .icon {
   margin: 0;
+}
+header .info .icon:hover,
+.header .info .icon:hover {
+  fill: #eb4c81;
 }
 header .info .cart,
 .header .info .cart {
-  width: calc(1280px / 12 * 2 - 20px);
+  grid-column: 11 / span 2;
+  grid-row: 1 / span 2;
   position: relative;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
+  justify-content: space-evenly;
   padding: 15px 0;
   border: 1px solid black;
   margin: 0;
   box-sizing: border-box;
+  align-items: center;
+}
+header .info .cart output,
+.header .info .cart output {
+  font-size: 1em;
+  vertical-align: center;
 }
 header .info .cart .icon,
 .header .info .cart .icon {
   border-left: 1px solid black;
-  padding: 10px 20px;
+  padding: 10px;
   margin: 0;
   width: 30px;
   height: 30px;
   fill: #3e69c9;
-}
-header .info .cart::before,
-.header .info .cart::before {
-  content: attr(data-summ) ' р.';
-  display: block;
-  position: absolute;
-  font-size: 24px;
-  left: 30px;
-  top: 30px;
 }
 header .info .cart::after,
 .header .info .cart::after {
@@ -516,23 +559,13 @@ header .info .cart::after,
   padding: 5px 10px;
 }
 @media screen and (max-width: 960px) {
-  header .info,
-  .header .info {
-    justify-content: space-between;
-    text-align: center;
-  }
   header .info .logo,
   .header .info .logo {
-    order: 1;
+    grid-column: 1 / span 3;
   }
   header .info .cart,
   .header .info .cart {
-    order: 2;
-  }
-  header .info form,
-  .header .info form {
-    order: 3;
-    flex-grow: 1;
+    grid-column: 10 / span 3;
   }
 }
 @media screen and (max-width: 720px) {
@@ -542,6 +575,34 @@ header .info .cart::after,
   .common-nav {
     display: none;
   }
+  header .info .cart,
+  .header .info .cart,
+  header .info .logo,
+  .header .info .logo {
+    grid-row: 1 / span 1;
+  }
+  header .info .logo figcaption div:not(:first-child),
+  .header .info .logo figcaption div:not(:first-child) {
+    display: none;
+  }
+  header .info .logo svg,
+  .header .info .logo svg {
+    max-height: 50px;
+  }
+  header .info .cart,
+  .header .info .cart {
+    font-size: 16px;
+    padding: 5px 0;
+  }
+  header .info .cart svg,
+  .header .info .cart svg {
+    max-width: 20px;
+    max-height: 20px;
+  }
+  header .info form,
+  .header .info form {
+    grid-column: span 12;
+  }
 }
 @media screen and (max-width: 520px) {
   .common {
@@ -550,8 +611,26 @@ header .info .cart::after,
   header .info,
   .header .info {
     background: #3e69c9;
+    display: flex;
     flex-wrap: nowrap;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0;
+    position: relative;
+  }
+  header .info:after,
+  .header .info:after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100vw;
+    background-color: inherit;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    margin: auto;
+    left: -50vw;
+    right: -50vw;
   }
   header .info address,
   .header .info address,
@@ -566,7 +645,6 @@ header .info .cart::after,
   header .info button,
   .header .info button {
     background-color: transparent;
-    position: fixed;
   }
   header .info button img,
   .header .info button img {
@@ -580,8 +658,8 @@ header .info .cart::after,
   }
   header .info .logo,
   .header .info .logo {
-    height: 80px;
-    width: 100px;
+    max-height: 80px;
+    max-width: 100px;
   }
   header .info .hamburger,
   .header .info .hamburger {
@@ -600,10 +678,94 @@ header .info .cart::after,
     height: 30px;
     fill: white;
   }
-  header .info .cart::before,
-  .header .info .cart::before,
-  header .info .cart::after,
-  .header .info .cart::after {
+  header .info .cart output,
+  .header .info .cart output {
+    font-size: 14px;
+  }
+  header .info .cart:after,
+  .header .info .cart:after {
     display: none;
   }
+}
+nav,
+.nav {
+  background-color: #3e69c9;
+}
+nav ul,
+.nav ul {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 16px;
+}
+nav ul li,
+.nav ul li {
+  border-right: 1px solid white;
+  padding: 0 20px;
+  color: white;
+}
+@media screen and (max-width: 520px) {
+  nav ul,
+  .nav ul {
+    background-color: #f4f4f4;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+  nav ul li,
+  .nav ul li {
+    padding: 10px;
+    border-bottom: 1px solid black;
+  }
+}
+.content {
+  display: flex;
+  padding-top: 15px;
+}
+.aside,
+aside {
+  flex: 0 0 calc(1280px / 12 * 3 - 20px);
+}
+.aside .categories-title,
+aside .categories-title {
+  background-color: #eb4c81;
+  color: white;
+  padding: 10px;
+}
+.aside .categories-list,
+aside .categories-list {
+  color: #eb4c81;
+  background-color: #f4f4f4;
+}
+.aside .categories-list li,
+aside .categories-list li {
+  padding: 10px;
+}
+.aside .categories-list li:hover,
+aside .categories-list li:hover {
+  background-color: #eb4c81;
+  color: white;
+}
+main,
+.main {
+  flex-grow: 1;
+  margin-left: 20px;
+}
+main .promotion-slider,
+.main .promotion-slider {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  align-content: center;
+}
+main .promotion .stat,
+.main .promotion .stat {
+  font-size: 30px;
+  color: black;
+  margin: 20px 10px;
 }

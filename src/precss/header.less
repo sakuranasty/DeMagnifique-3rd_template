@@ -4,8 +4,11 @@
   justify-content: space-between;
   background-color: @lightgray;
   align-items: center;
+  position: relative;
+  padding: 10px 0;
   &-nav, .social {
     display: flex;
+    align-items: end;
   }
   .hamburger{
     display: none;
@@ -41,10 +44,10 @@
 header, .header{
   .info{
     background: white;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(@n, 1fr);
+    grid-template-rows: 1fr 1fr;
+    column-gap: @offset;
     padding: 15px 0;
     box-sizing: border-box;
     .hamburger{
@@ -52,67 +55,73 @@ header, .header{
     }
     .logo{
       fill: @skyblue;
-      width: calc(@wrap_width / @n * 2 - @offset);
-      svg{
-        width: 100%;
+      grid-column: 1/span 3;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      figcaption div{
+        margin-bottom: 10px;
       }
     }
-    form{
-      width: calc(@wrap_width / @n * 5 - @offset);
-      padding: 0 5px;
-      position: relative;
-      text-align: left;
-      font-size: 16px;
-      address, .addres{
-        margin-bottom: 10px;
-        display: flex;
-        align-items: baseline;
-        span{
-          margin-right: 10px;
-        }
-      }
-      input{
-        width: calc(100% - 90px);
-        box-sizing: border-box;
-        height: 42px;
-      }
-      button{
-        width: 80px;
-        border: none;
-        box-sizing: border-box;
-        padding: 5px;
-        height: 42px;
-        position: absolute;
-       }
-      img{
-        margin: 0;
+    address, .addres{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      grid-column: 4/span 6;
+      a{
+        margin-right: 10px;
       }
 
     }
+    form{
+      grid-column: 4/span 6;
+      grid-row-start: 2;
+      position: relative;
+      text-align: left;
+      font-size: 16px;
+      display: flex;
+      margin-top: 10px;
+    }
+    input{
+      width: calc(100% - 90px);
+      box-sizing: border-box;
+
+    }
+    button{
+      width: 80px;
+      border: none;
+      box-sizing: border-box;
+      padding: 5px;
+
+    }
+    .icon{
+      margin: 0;
+      &:hover{
+        fill: @rosepink;
+      }
+    }
     .cart{
-      width: calc(@wrap_width / @n * 2 - @offset);
+      grid-column: 11/span 2;
+      grid-row: 1 / span 2;
       position: relative;
       display: flex;
-      flex-direction: row-reverse;
+      flex-direction: row;
+      justify-content: space-evenly;
       padding: 15px 0;
       border: 1px solid black;
       margin: 0;
       box-sizing: border-box;
+      align-items: center;
+      output{
+        font-size: 1em;
+        vertical-align: center;
+      }
       .icon{
         border-left: 1px solid black;
-        padding: 10px 20px;
+        padding: 10px;
         margin: 0;
         width: 30px;
         height: 30px;
         fill: @skyblue;
-      }
-      &::before{
-        content: attr(data-summ)+' р.';
-        display: block;
-        position: absolute;
-        font-size: 24px;
-        left:30px;
-        top:30px;
       }
       &::after{
         content: attr(data-count);
@@ -132,18 +141,13 @@ header, .header{
 @media screen and (max-width:960px){
   header, .header{
     .info{
-      justify-content: space-between;
-      text-align: center;
       .logo{
-        order: 1;
+        grid-column: 1/span 3;
       }
       .cart{
-        order: 2;
+        grid-column: 10/span 3;
       }
-      form{
-        order: 3;
-        flex-grow: 1;
-      }
+
 
     }
   }
@@ -157,6 +161,32 @@ header, .header{
       display: none;
     }
   }
+  header, .header {
+    .info {
+      .cart, .logo {
+        grid-row: 1/span 1;
+      }
+      .logo {
+        figcaption div:not(:first-child) {
+          display: none;
+        }
+        svg{
+          max-height: 50px;
+        }
+      }
+      .cart{
+        font-size: 16px;
+        padding: 5px 0;
+        svg{
+          max-width: 20px;
+          max-height: 20px;
+        }
+      }
+      form{
+        grid-column: span 12;
+      }
+    }
+  }
 }
 @media screen and (max-width: 520px) {
   .common{
@@ -165,8 +195,25 @@ header, .header{
   header,.header {
     .info {
       background: @skyblue;
+      display: flex;
       flex-wrap:nowrap;
-      align-items: flex-start;
+      align-items: center;
+      justify-content: space-around;
+      padding: 0;
+      position: relative;
+      &:after{
+        content: '';
+        display: block;
+        height: 100%;
+        width: 100vw;
+        background-color: inherit;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        margin: auto;
+        left: -50vw;
+        right: -50vw;
+      }
     address,.address {
       display: none;
     }
@@ -175,7 +222,6 @@ header, .header{
       }
       button{
         background-color: transparent;
-        position: fixed;
         img{
           fill: white;
         }
@@ -184,8 +230,8 @@ header, .header{
         fill: white;
       }
       .logo{
-        height: 80px;
-        width: 100px;
+        max-height: 80px;
+        max-width: 100px;
       }
     .hamburger {
       display: block;
@@ -200,13 +246,48 @@ header, .header{
           height: 30px;
           fill: white;
         }
-        &::before,&::after{
+        output{
+          font-size: 14px;
+        }
+        &:after{
           display: none;
         }
+
       }
 
     }
   }
 }
-
+nav,.nav{
+  background-color: @skyblue;
+  ul {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 16px;
+    li {
+      border-right: 1px solid white;
+      padding: 0 20px;
+      color: white;
+    }
+  }
+}
+@media screen and (max-width: 520px){
+  nav,.nav{
+    ul {
+      background-color: @lightgray;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      flex-direction: column;
+      width: 100%;
+      padding: 0;
+      li {
+        padding: 10px;
+        border-bottom: 1px solid black;
+      }
+    }
+  }
+}
 
