@@ -1,0 +1,81 @@
+footer,.footer{
+  background-color: #e99cb0;
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+  position: relative;
+  justify-content: space-between;
+  padding: 20px 0;
+  box-sizing: border-box;
+  .logo{
+    color: white;
+    svg{
+      fill: currentColor;
+    }
+  }
+  h3,.h3{
+    border-bottom: 1px solid lightgray;
+  }
+  li, address{
+    padding: 5px 0;
+  }
+  &-nav{
+    .size(@n, 1, @offset);
+    a:hover{
+      text-decoration: underline;
+    }
+  }
+  .payments{
+    .size(@n, 2, @offset);
+  }
+  .contacts{
+    .size(@n, 3, @offset);
+  }
+  &::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100vw;
+    background-color: inherit;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    margin: auto;
+    left: -50vw;
+    right: -50vw;
+  }
+}
+small{
+  display: block;
+  background-color: #000;
+  padding: 10px;
+  text-align: center;
+  color:white;
+  font-size: 14px;position: relative;
+  &::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100vw;
+    background-color: inherit;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    margin: auto;
+    left: -50vw;
+    right: -50vw;
+  }
+}
+@media screen and (max-width:960px){
+  .footer,footer {
+    flex-wrap: nowrap;
+    .logo {
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 720px){
+}
+@media screen and (max-width: 520px){
+
+}

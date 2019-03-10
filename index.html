@@ -7,6 +7,7 @@
           content="width=device-width, initial-scale=1.0, shrink-to-fit=no viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DE magnifique</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="src/css/styles.css">
 </head>
 <body>
@@ -25,40 +26,41 @@
         </ul>
     </aside>
     <div class="info">
-        <figure class="logo">
-            <figcaption>
-                <div>De Magnifique</div><!--todo во что обернуть название магазина-->
-                <div>Интернет магазин парфюмерии</div>
-            </figcaption>
-            <svg  xmlns="http://www.w3.org/2000/svg"><use xlink:href="src/img/logo.svg#logo"></use></svg>
-        </figure>
+        <a href="#" class="logo">
+            <figure >
+                <figcaption>
+                    <div>De Magnifique</div><!--todo во что обернуть название магазина-->
+                    <div>Интернет магазин парфюмерии</div>
+                </figcaption>
+                <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg"><use xlink:href="src/img/logo.svg#logo"></use></svg>
+            </figure>
+        </a>
         <address class="address">
             <a href="tel:+88000000004">
                 <svg class="icon" xmlns="http://www.w3.org/2000/svg">
-                    <use
-                            xlink:href="src/img/phone.svg#phone"></use>
-                </svg>
+                    <use xlink:href="src/img/phone.svg#phone"></use></svg>
                 8-(800)-684-55-94</a>
             <a href="mailto:info@nalabuten.ah">
                 <svg class="icon" xmlns="http://www.w3.org/2000/svg">
-                    <use
-                            xlink:href="src/img/mail.svg#mail"></use>
-                </svg>
+                    <use xlink:href="src/img/mail.svg#mail"></use></svg>
                 info@nalabuten.ah</a>
         </address>
         <form method="GET" id="main-search">
             <input type="search" name="search" placeholder="Введите поисковую фразу...">
             <button type="submit" title="Поиск по сайту" name="submit"><svg class="icon" xmlns="http://www.w3.org/2000/svg"><use xlink:href="src/img/search.svg#search"></use></svg></button>
         </form>
-        <figure class="cart" data-count="3">
-            <output>7500 р.</output><!--todo как вставить р.-->
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg"><use xlink:href="src/img/shopping_cart.svg#cart"></use></svg>
-        </figure><!--before after todo добавить с помощью посевдоэлементов цену и кол-во товаров content:attr(data-...)-->
+        <figure class="cart" >
+            <div><output name="total">7500</output> р.</div><!--todo как вставить р.-->
+            <a href="#" data-count="3">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="src/img/shopping_cart.svg#cart"></use>
+                </svg>
+            </a>
+        </figure>
         <svg class="icon hamburger" xmlns="http://www.w3.org/2000/svg"><use xlink:href="src/img/hamburger.svg#hamburger"></use></svg>
-
     </div>
 </header>
-<nav class="nav">
+<nav class="nav wrap">
     <ul>
         <li><a href="#">Главная</a></li>
         <li><a href="#">Каталог</a></li>
@@ -71,107 +73,160 @@
     <aside class="aside categories"><!--если aside это что-то,что может быть опущено, то можно ли его распологать в main?-->
         <h3 class="categories-title">Категории</h3>
         <ul class="categories-list">
-            <li><a href="">lorem</a></li>
-            <li><a href="">lorem</a></li>
-            <li><a href="">lorem</a></li>
-            <li><a href="">lorem</a></li>
-            <li><a href="">lorem</a></li>
-            <li><a href="">lorem</a></li>
-            <li><a href="">lorem</a></li>
-            <li><a href="">lorem</a></li>
+            <li><a href=""><svg class="icon" xmlns="http://www.w3.org/2000/svg"><use xlink:href="src/img/home.svg#home"></use></svg>
+                Для дома</a></li>
+            <li><a href=""><svg class="icon" xmlns="http://www.w3.org/2000/svg"><use xlink:href="src/img/heart.svg#heart"></use></svg>
+                Цветочные</a></li>
+            <li><a href=""><svg class="icon" xmlns="http://www.w3.org/2000/svg"><use xlink:href="src/img/group.svg#group"></use></svg>
+                Цветочные</a></li>
+            <li><a href=""><svg class="icon" xmlns="http://www.w3.org/2000/svg"><use xlink:href="src/img/calendar.svg#calendar"></use></svg>
+                Цветочные</a></li>
+            <li><a href=""><svg class="icon" xmlns="http://www.w3.org/2000/svg"><use xlink:href="src/img/cog.svg#cog"></use></svg>
+                Цветочные</a></li>
+            <li><a href=""><svg class="icon" xmlns="http://www.w3.org/2000/svg"><use xlink:href="src/img/paper_clip.svg#paper-clip"></use></svg>
+                Цветочные</a></li>
+            <li><a href=""><svg class="icon" xmlns="http://www.w3.org/2000/svg"><use xlink:href="src/img/star.svg#star"></use></svg>
+                Цветочные</a></li>
+            <li><a href=""><svg class="icon" xmlns="http://www.w3.org/2000/svg"><use xlink:href="src/img/cloud.svg#cloud"></use></svg>
+                Цветочные</a></li>
         </ul>
         <div class="banner">
-            <figure class="banner-block"><img src="" alt=""></figure>
-            <figure class="banner-block"><img src="" alt=""></figure>
+            <div class="banner-block"><img src="src/images/boss.jpg" alt=""></div>
+            <figure class="banner-block"><img src="src/images/some.jpg" alt=""></figure>
         </div>
     </aside>
     <main class="main">
         <div class="promotion">
             <div class="promotion-slider">
-                <div class="stat">Take a chance on Channel</div>
-                <p>не упусти шанс стать неповторимой этой весной</p>
+                <div class="promotion-slide">
+                    <img src="src/images/slider1.png" alt="">
+                    <div class="text"><!--Насколько критично что я добавила обертку сюда? просто через цсс этим управлять без нее очень сложно-->
+                        <div class="stat">Take a chance on Channel</div>
+                        <div>Новая весенняя коллекция</div>
+                        <div>Мы рады представить вам новую коллекцию ароматов Chanel - Chance. Не упусти шанс стать самой яркой этой весной</div>
+                        <div class="promotion-btn">Купить сейчас</div>
+                    </div>
+                </div>
             </div>
             <div class="promotion-blocks">
-                <figure></figure>
-                <figure></figure>
-                <figure></figure>
+                <figure>
+                    <figcaption><svg class="icon" xmlns="http://www.w3.org/2000/svg"><use xlink:href="src/img/credit.svg#credit"></use></svg> Продажа</figcaption>
+                    <div>Широкий ассортимет</div>
+                </figure>
+                <figure><figcaption><svg class="icon" xmlns="http://www.w3.org/2000/svg"><use xlink:href="src/img/thumbs.svg#thumbs"></use></svg> Продажа</figcaption>
+                    <div>Широкий ассортимет</div></figure>
+                <figure><figcaption><svg class="icon" xmlns="http://www.w3.org/2000/svg"><use xlink:href="src/img/gift.svg#gift"></use></svg> Продажа</figcaption>
+                    <div>Широкий ассортимет</div></figure>
             </div>
         </div>
-        <section class="new"><!--todo before новинки--><!---->
+        <section class="new">
             <h2 class="h2">Новинки</h2>
-            <figure class="item"><img src="" alt="" class="item-img">
-                <div class="item-title"></div>
-                <div class="item-price"></div>
+            <figure class="item">
+                <figcaption class="item-title">Товар</figcaption>
+                <img src="src/images/boss.jpg" alt="" class="item-img">
+                <span class="item-price"><output name="item-price" >4500</output> р.</span>
                 <div class="item-buttons">
-                    <div class="item-buttons__cart">Добавить в корзину</div>
-                    <div class="item-button__comp"></div>
+                    <div class="item-buttons__cart"><a href=""> <svg class="icon" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="src/img/shopping_cart.svg#cart"></use>
+                    </svg>в корзину</a></div>
+                    <div class="item-button__comp"><a href="#"><svg class="icon" xmlns="http://www.w3.org/2000/svg"><use xlink:href="src/img/compare.svg#compare"></use></svg></a></div>
                 </div>
             </figure>
-            <figure class="item"><img src="" alt="" class="item-img">
-                <div class="item-title"></div>
-                <div class="item-price"></div>
+            <figure class="item">
+                <figcaption class="item-title">Товар</figcaption>
+                <img src="src/images/item.jpg" alt="" class="item-img">
+                <span class="item-price"><output name="item-price" >4500</output> р.</span>
                 <div class="item-buttons">
-                    <div class="item-buttons__cart">Добавить в корзину</div>
-                    <div class="item-button__comp"></div>
+                    <div class="item-buttons__cart"><a href=""> <svg class="icon" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="src/img/shopping_cart.svg#cart"></use>
+                    </svg>в корзину</a></div>
+                    <div class="item-button__comp"><a href="#"><svg class="icon" xmlns="http://www.w3.org/2000/svg"><use xlink:href="src/img/compare.svg#compare"></use></svg></a></div>
                 </div>
             </figure>
-            <figure class="item"><img src="" alt="" class="item-img">
-                <div class="item-title"></div>
-                <div class="item-price"></div>
+            <figure class="item">
+                <figcaption class="item-title">Товар</figcaption>
+                <img src="src/images/item.jpg" alt="" class="item-img">
+                <span class="item-price"><output name="item-price" >4500</output> р.</span>
                 <div class="item-buttons">
-                    <div class="item-buttons__cart">Добавить в корзину</div>
-                    <div class="item-button__comp"></div>
+                    <div class="item-buttons__cart"><a href=""> <svg class="icon" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="src/img/shopping_cart.svg#cart"></use>
+                    </svg>в корзину</a></div>
+                    <div class="item-button__comp"><a href="#"><svg class="icon" xmlns="http://www.w3.org/2000/svg"><use xlink:href="src/img/compare.svg#compare"></use></svg></a></div>
                 </div>
             </figure>
-            <figure class="item"><img src="" alt="" class="item-img">
-                <div class="item-title"></div>
-                <div class="item-price"></div>
+            <figure class="item">
+                <figcaption class="item-title">Товар</figcaption>
+                <img src="src/images/item.jpg" alt="" class="item-img">
+                <span class="item-price"><output name="item-price" >4500</output> р.</span>
                 <div class="item-buttons">
-                    <div class="item-buttons__cart">Добавить в корзину</div>
-                    <div class="item-button__comp"></div>
+                    <div class="item-buttons__cart"><a href=""> <svg class="icon" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="src/img/shopping_cart.svg#cart"></use>
+                    </svg>в корзину</a></div>
+                    <div class="item-button__comp"><a href="#"><svg class="icon" xmlns="http://www.w3.org/2000/svg"><use xlink:href="src/img/compare.svg#compare"></use></svg></a></div>
                 </div>
             </figure>
         </section>
         <section class="sale"><!--todo before новинки--><!--Если section это какая-то тематическая секция, то вынести название секции в псевдоэлемент неправильно?-->
             <h2 class="h2">Распродажа</h2>
-            <figure class="item"><img src="" alt="" class="item-img">
-                <div class="item-title"></div>
-                <div class="item-price"></div>
+            <figure class="item">
+                <figcaption class="item-title">Товар</figcaption>
+                <img src="src/images/item.jpg" alt="" class="item-img">
+                <span class="item-price"><output name="item-price" >4500</output> р.</span>
                 <div class="item-buttons">
-                    <div class="item-buttons__cart">Добавить в корзину</div>
-                    <div class="item-button__comp"></div>
+                    <div class="item-buttons__cart"><a href=""> <svg class="icon" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="src/img/shopping_cart.svg#cart"></use>
+                    </svg>в корзину</a></div>
+                    <div class="item-button__comp"><a href="#"><svg class="icon" xmlns="http://www.w3.org/2000/svg"><use xlink:href="src/img/compare.svg#compare"></use></svg></a></div>
                 </div>
             </figure>
-            <figure class="item"><img src="" alt="" class="item-img">
-                <div class="item-title"></div>
-                <div class="item-price"></div>
+            <figure class="item">
+                <figcaption class="item-title">Товар</figcaption>
+                <img src="src/images/item.jpg" alt="" class="item-img">
+                <span class="item-price"><output name="item-price" >4500</output> р.</span>
                 <div class="item-buttons">
-                    <div class="item-buttons__cart">Добавить в корзину</div>
-                    <div class="item-button__comp"></div>
+                    <div class="item-buttons__cart"><a href=""> <svg class="icon" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="src/img/shopping_cart.svg#cart"></use>
+                    </svg>в корзину</a></div>
+                    <div class="item-button__comp"><a href="#"><svg class="icon" xmlns="http://www.w3.org/2000/svg"><use xlink:href="src/img/compare.svg#compare"></use></svg></a></div>
                 </div>
             </figure>
-            <figure class="item"><img src="" alt="" class="item-img">
-                <div class="item-title"></div>
-                <div class="item-price"></div>
+            <figure class="item">
+                <figcaption class="item-title">Товар</figcaption>
+                <img src="src/images/item.jpg" alt="" class="item-img">
+                <span class="item-price"><output name="item-price" >4500</output> р.</span>
                 <div class="item-buttons">
-                    <div class="item-buttons__cart">Добавить в корзину</div>
-                    <div class="item-button__comp"></div>
+                    <div class="item-buttons__cart"><a href=""> <svg class="icon" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="src/img/shopping_cart.svg#cart"></use>
+                    </svg>в корзину</a></div>
+                    <div class="item-button__comp"><a href="#"><svg class="icon" xmlns="http://www.w3.org/2000/svg"><use xlink:href="src/img/compare.svg#compare"></use></svg></a></div>
                 </div>
             </figure>
-            <figure class="item"><img src="" alt="" class="item-img">
-                <div class="item-title"></div>
-                <div class="item-price"></div>
+            <figure class="item">
+                <figcaption class="item-title">Товар</figcaption>
+                <img src="src/images/item.jpg" alt="" class="item-img">
+                <span class="item-price"><output name="item-price" >4500</output> р.</span>
                 <div class="item-buttons">
-                    <div class="item-buttons__cart">Добавить в корзину</div>
-                    <div class="item-button__comp"></div>
+                    <div class="item-buttons__cart"><a href=""> <svg class="icon" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="src/img/shopping_cart.svg#cart"></use>
+                    </svg>в корзину</a></div>
+                    <div class="item-button__comp"><a href="#"><svg class="icon" xmlns="http://www.w3.org/2000/svg"><use xlink:href="src/img/compare.svg#compare"></use></svg></a></div>
                 </div>
             </figure>
         </section>
     </main>
 </div>
-<footer class="footer">
-    <figure class="footer-logo"><img src="" alt=""></figure>
-    <div class="footer-nav"><!--todo before меню-->
+<footer class="footer wrap">
+    <a href="#" class="logo">
+        <figure >
+            <figcaption>
+                <div>De Magnifique</div><!--todo во что обернуть название магазина-->
+                <div>Интернет магазин парфюмерии</div>
+            </figcaption>
+            <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg"><use xlink:href="src/img/logo.svg#logo"></use></svg>
+        </figure>
+    </a>
+    <div class="footer-nav">
+        <h3 class="h3">Меню</h3>
         <ul>
             <li><a href="">Главная</a></li>
             <li><a href="">Каталог</a></li>
@@ -180,7 +235,8 @@
             <li><a href="">Контакты</a></li>
         </ul>
     </div>
-    <div class="payments"><!--todo before способы оплаты-->
+    <div class="payments">
+        <h3 class="h3">Способы оплаты</h3>
         <ul>
             <li><a href="">Наличными</a></li>
             <li><a href="">Visa или MasterCard</a></li>
@@ -188,11 +244,12 @@
         </ul>
     </div>
     <div class="contacts">
+        <h3 class="h3">Контакты</h3>
         <address>Телефон</address>
         <address>Email</address>
         <address>Адрес</address>
     </div>
 </footer>
-<small class="copyright">&copy; Nalabuten.ah <time datetime="2019-02-24">2017</time></small>
+<small class="copyright wrap">&copy; Nalabuten.ah <time datetime="2019-02-24">2017</time></small>
 </body>
 </html>
