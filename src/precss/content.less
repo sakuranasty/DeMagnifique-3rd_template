@@ -167,11 +167,13 @@ main,.main{
   display: flex;
   flex-direction: column-reverse;
   .size(@n, 2, @offset);
-  flex-grow: 1;
+  flex-grow: 0;
+  flex-shrink: 0;
   padding: 10px;
   text-align: center;
   border: 1px solid lightgray;
   position: relative;
+  margin-top: 10px;
   img{
     order:4;
     width: 100%;

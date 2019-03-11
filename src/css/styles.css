@@ -549,7 +549,7 @@ header .info .cart,
   grid-row: 1 / span 2;
   display: flex;
   justify-content: space-between;
-  padding: 10px 0;
+  padding: 8px 0;
   border: 1px solid black;
   box-sizing: border-box;
   align-items: center;
@@ -1001,14 +1001,16 @@ main .sale .h2,
 .item {
   display: flex;
   flex-direction: column-reverse;
-  width: calc(1280px / 12 * 2 - 20px);
+  flex-basis: calc(1280px / 12 * 2 - 20px);
   box-sizing: border-box;
   margin: 0 10px;
-  flex-grow: 1;
+  flex-grow: 0;
+  flex-shrink: 0;
   padding: 10px;
   text-align: center;
   border: 1px solid lightgray;
   position: relative;
+  margin-top: 10px;
 }
 .item img {
   order: 4;
