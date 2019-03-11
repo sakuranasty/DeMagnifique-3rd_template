@@ -6,6 +6,10 @@
   align-items: center;
   position: relative;
   padding: 10px 0;
+  font-weight: 400;
+  li {
+    box-sizing: border-box;
+  }
   a{
     display: flex;
     align-items: center;
@@ -13,17 +17,19 @@
   &-nav, .social {
     display: flex;
     align-items: end;
-    .icon{
-      margin-right: 10px;
-    }
   }
   .hamburger{
     display: none;
   }
   &-nav li {
+    padding: 0 15px;
+    margin-right: 10px;
     &:nth-child(2) {
       border-left: 1px solid black;
       border-right: 1px solid black;
+    }
+    .icon{
+      margin-right: 10px;
     }
     &:hover .icon{
       fill: @rosepink;
@@ -33,6 +39,12 @@
     }
   }
   .social{
+    margin-right: -10px;
+    font-size: 20px;
+    li{
+      padding:0 10px;
+      margin: 0 10px;
+    }
     .icon:hover{
       fill: @rosepink;
     }
@@ -50,11 +62,6 @@
     left: -50vw;
     right: -50vw;
   }
-  li {
-    margin: 0 10px;
-    padding: 0 10px;
-    box-sizing: border-box;
-  }
 
 }
 header, .header{
@@ -62,7 +69,7 @@ header, .header{
     background: white;
     display: grid;
     grid-template-columns: repeat(@n, 1fr);
-    grid-template-rows: 1fr 1fr;
+    //grid-template-rows: 1fr 1fr;
     column-gap: @offset;
     grid-auto-rows: auto;
     padding: 10px 0;
@@ -97,10 +104,10 @@ header, .header{
       flex-wrap: wrap;
       align-items: flex-end;
       grid-column: 4/span 6;
-      margin-bottom: 5px;
+      margin:0px 0 5px;
       a{
         display: flex;
-        margin-right: 10px;
+        margin:0 5px;
       }
       .icon{
         margin-right: 10px;
@@ -112,17 +119,20 @@ header, .header{
       text-align: left;
       font-size: 16px;
       display: flex;
-      margin-bottom: 10px;
     }
     input{
-      width: calc(100% - 90px);
-      box-sizing: border-box;
+      flex-grow: 1;
+      padding: 0px 25px;
     }
     button{
-      width: 80px;
+      flex-shrink: 1;
       border: none;
+      padding: 0 25px;
+      font-size: 22px;
       box-sizing: border-box;
-      padding: 5px;
+      .icon{
+        margin: 0 5px;
+      }
     }
     .cart{
       grid-column: 11/span 2;
@@ -131,28 +141,29 @@ header, .header{
       justify-content: space-between;
       padding: 10px 0;
       border: 1px solid black;
-      margin: 10px;
       box-sizing: border-box;
       align-items: center;
+      margin-top: 10px;
       div{
         font-size: 18px;
         text-align: center;
-        margin: 0 auto;
+        margin: auto;
+        display: flex;
+        padding: 0 5px;
       }
       a{
         border-left: 1px solid black;
-        padding: 10px 15px;
-        margin: 0;
+        padding: 3px 25px;
         fill: @skyblue;
         position: relative;
-        font-size: 30px;
+        font-size: 40px;
         &::after{
           content: attr(data-count);
           display: block;
           border-radius: 30px;
           background-color: @darkred;
           position: absolute;
-          right: 10px;
+          right: 30%;
             top:-20px;
             font-size: 15px;
             color: #fff;
@@ -166,21 +177,19 @@ header, .header{
     }
   }
 @media screen and (max-width:960px){
-  .common{
-    .hamburger{
-        display: block;
+  .common {
+    .hamburger {
+      display: block;
     }
+  }
      header, .header{
-         .info{
-             .logo{
-          grid-column: 1/span 3;
-        }
-        .cart{
-          grid-column: 10/span 3;
+       .info{
+         .cart{
+           grid-column: 10/span 3;
         }
       }
     }
-  }
+
 }
   @media screen and (max-width: 720px){
     .common-nav{
@@ -196,7 +205,6 @@ header, .header{
         figcaption div:not(:first-child) {
           display: none;
         }
-
       }
       .address, address{
         grid-column: 4/span 5;
