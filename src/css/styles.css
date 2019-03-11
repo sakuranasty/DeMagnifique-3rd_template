@@ -846,8 +846,13 @@ nav ul li:not(:last-child),
 main,
 .main {
   order: 1;
-  flex: 1 0 calc(100% / 12 * 3 - 20px);
+  flex: 1 0 calc(100% / 12 * 9 - 20px);
   box-sizing: border-box;
+  margin: 0 -10px;
+}
+main .promotion,
+.main .promotion {
+  margin: 0 10px;
 }
 main .promotion-slider,
 .main .promotion-slider {
@@ -919,14 +924,13 @@ main .promotion-btn,
 main .promotion-blocks,
 .main .promotion-blocks {
   display: flex;
-  flex-wrap: wrap;
   margin: 0 -10px;
-  flex-wrap: nowrap;
+  margin-top: 10px;
 }
 main .promotion-blocks figure,
 .main .promotion-blocks figure {
   flex: 1 1 calc(1280px / 12 * 3 - 20px);
-  margin: 15px 10px;
+  margin: 0 10px;
   border: 2px solid #b3b5b5;
   box-sizing: border-box;
   padding: 10px;
@@ -961,7 +965,6 @@ main .sale,
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -10px;
   justify-content: space-between;
 }
 main .new figure:before,
@@ -993,8 +996,7 @@ main .sale .h2,
   border-bottom: 1px solid lightgray;
   text-transform: uppercase;
   width: 100%;
-  margin-left: 10px;
-  margin-bottom: 15px;
+  margin: 0 10px 15px;
 }
 .item {
   display: flex;
@@ -1002,6 +1004,7 @@ main .sale .h2,
   width: calc(1280px / 12 * 2 - 20px);
   box-sizing: border-box;
   margin: 0 10px;
+  flex-grow: 1;
   padding: 10px;
   text-align: center;
   border: 1px solid lightgray;
@@ -1100,7 +1103,8 @@ footer,
   background-color: #e99cb0;
   display: grid;
   grid-auto-rows: auto;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 20px;
   color: white;
   position: relative;
   padding: 20px 0 0;
@@ -1110,13 +1114,9 @@ footer,
 footer .logo,
 .footer .logo {
   color: white;
-  grid-column: 1;
+  grid-column: 1 / span 3;
   grid-row: 1 / span 1;
   align-self: start;
-  width: calc(1280px / 12 * 3 - 20px);
-  box-sizing: border-box;
-  margin: 0 10px;
-  margin: 0;
 }
 footer .logo svg,
 .footer .logo svg {
@@ -1136,9 +1136,7 @@ footer address,
 }
 footer-nav,
 .footer-nav {
-  grid-row: 1 / span 1;
-  width: calc(1280px / 12 * 1 - 20px);
-  margin-right: calc(1280px / 12 * 1 - 20px);
+  grid-column: 4 / span 1;
 }
 footer-nav a:hover,
 .footer-nav a:hover {
@@ -1147,14 +1145,12 @@ footer-nav a:hover,
 footer .payments,
 .footer .payments {
   grid-row: 1 / span 1;
-  width: calc(1280px / 12 * 2 - 20px);
-  margin-right: calc(1280px / 12 * 1 - 20px);
+  grid-column: 6 / span 2;
 }
 footer .contacts,
 .footer .contacts {
   grid-row: 1 / span 1;
-  width: calc(1280px / 12 * 3 - 20px);
-  margin-right: calc(1280px / 12 * 1 - 20px);
+  grid-column: 9 / span 3;
 }
 footer::before,
 .footer::before {

@@ -3,7 +3,8 @@ footer,.footer{
   background-color: #e99cb0;
   display:grid;
   grid-auto-rows: auto;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(12,1fr);
+  grid-gap: @offset;
   color: white;
   position: relative;
   padding: 20px 0 0;
@@ -11,11 +12,9 @@ footer,.footer{
   margin-top: 10px;
   .logo{
     color: white;
-    grid-column: 1;
+    grid-column: 1/span 3;
     grid-row: 1/span 1;
     align-self: start;
-    .size(@n, 3, @offset);
-    margin: 0;
     svg{
       fill: currentColor;
     }
@@ -27,22 +26,20 @@ footer,.footer{
     padding: 5px 0;
   }
   &-nav{
-    grid-row: 1/ span 1;
-    width: calc(1280px / @n * 1 - @offset);
-    margin-right: @m;
+    grid-column: 4/ span 1;
+    //grid-row: 1/span 1;
     a:hover{
       text-decoration: underline;
     }
   }
   .payments{
     grid-row: 1/ span 1;
-    width: calc(1280px / @n * 2 - @offset);
-    margin-right: @m;
+    grid-column: 6/span 2;
+
   }
   .contacts{
     grid-row: 1/ span 1;
-    width: calc(1280px / @n * 3 - @offset);
-    margin-right: @m;
+    grid-column: 9/span 3;
   }
   &::before {
     content: '';
