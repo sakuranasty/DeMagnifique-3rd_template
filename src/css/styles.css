@@ -1107,16 +1107,16 @@ main .sale .h2,
   .main {
     order: 0;
   }
-  aside,
-  .aside {
+  .content aside,
+  .content .aside {
     display: flex;
     position: static;
-    flex-grow: 1;
+    flex: 1 0 100%;
   }
-  aside .categories-title,
-  .aside .categories-title,
-  aside .categories-list,
-  .aside .categories-list {
+  .content aside .categories-title,
+  .content .aside .categories-title,
+  .content aside .categories-list,
+  .content .aside .categories-list {
     display: none;
   }
 }

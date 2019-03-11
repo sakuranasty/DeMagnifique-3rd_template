@@ -268,13 +268,14 @@ main,.main{
   main,.main{
     order: 0;
   }
-  .categories {
+  .content{
+  aside,.aside {
     display: flex;
     position: static;
-   flex-grow: 1;
+   flex: 1 0 100%;
+    .categories{
       &-title, &-list {
         display: none;
-      }
-    }
+      }}
   }
-}
+}}
