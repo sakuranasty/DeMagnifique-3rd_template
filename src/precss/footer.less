@@ -27,7 +27,7 @@ footer,.footer{
   }
   &-nav{
     grid-column: 4/ span 1;
-    //grid-row: 1/span 1;
+    margin-left: 10px;
     a:hover{
       text-decoration: underline;
     }
@@ -40,6 +40,9 @@ footer,.footer{
   .contacts{
     grid-row: 1/ span 1;
     grid-column: 9/span 3;
+    a{
+      margin-left: 5px;
+    }
   }
   &::before {
     content: '';
@@ -91,7 +94,6 @@ small{
     }
     &-nav{
      grid-column: 1/ span 1;
-      margin: 0;
       width: auto;
      }
     .payments{
@@ -114,8 +116,39 @@ small{
     &-nav {
       display: none;
     }
+    .payments{
+      margin-left: 10px;
+      grid-column: auto / span 6;
+
+    }
+    .contacts{
+      grid-column: auto / span 6;
+      margin-right: 10px;
+    }
   }
 }
 @media screen and (max-width: 520px){
+  .footer,footer {
+    .logo {
+      display: flex;
+      grid-column: 1/span 12;
+      svg{
 
+      }
+    }
+
+    .payments {
+      display: none;
+    }
+
+    .contacts {
+      grid-column: auto/ span 12;
+      grid-row: 2/span 1;
+      width: auto;
+      margin-left: 10px;
+    }
+  }
+  small{
+    grid-row: 3/span 1;
+  }
 }

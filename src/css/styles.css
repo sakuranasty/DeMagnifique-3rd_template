@@ -1093,10 +1093,30 @@ main .sale .h2,
   }
 }
 @media screen and (max-width: 520px) {
-  .categories {
-    display: none;
+  .content {
+    flex-direction: column;
+    flex-wrap: wrap;
   }
   .promotion {
+    display: none;
+  }
+  .item {
+    flex: 1 0 calc(50% - 20px);
+  }
+  main,
+  .main {
+    order: 0;
+  }
+  aside,
+  .aside {
+    display: flex;
+    position: static;
+    flex-grow: 1;
+  }
+  aside .categories-title,
+  .aside .categories-title,
+  aside .categories-list,
+  .aside .categories-list {
     display: none;
   }
 }
@@ -1139,6 +1159,7 @@ footer address,
 footer-nav,
 .footer-nav {
   grid-column: 4 / span 1;
+  margin-left: 10px;
 }
 footer-nav a:hover,
 .footer-nav a:hover {
@@ -1153,6 +1174,10 @@ footer .contacts,
 .footer .contacts {
   grid-row: 1 / span 1;
   grid-column: 9 / span 3;
+}
+footer .contacts a,
+.footer .contacts a {
+  margin-left: 5px;
 }
 footer::before,
 .footer::before {
@@ -1208,7 +1233,6 @@ small::before {
   .footer-nav,
   footer-nav {
     grid-column: 1 / span 1;
-    margin: 0;
     width: auto;
   }
   .footer .payments,
@@ -1231,5 +1255,36 @@ small::before {
   .footer-nav,
   footer-nav {
     display: none;
+  }
+  .footer .payments,
+  footer .payments {
+    margin-left: 10px;
+    grid-column: auto / span 6;
+  }
+  .footer .contacts,
+  footer .contacts {
+    grid-column: auto / span 6;
+    margin-right: 10px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .footer .logo,
+  footer .logo {
+    display: flex;
+    grid-column: 1 / span 12;
+  }
+  .footer .payments,
+  footer .payments {
+    display: none;
+  }
+  .footer .contacts,
+  footer .contacts {
+    grid-column: auto / span 12;
+    grid-row: 2 / span 1;
+    width: auto;
+    margin-left: 10px;
+  }
+  small {
+    grid-row: 3 / span 1;
   }
 }

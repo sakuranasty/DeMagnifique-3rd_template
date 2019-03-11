@@ -255,10 +255,26 @@ main,.main{
   }
 }
 @media screen and (max-width: 520px) {
-  .categories {
-    display: none;
+  .content{
+    flex-direction: column;
+    flex-wrap: wrap;
   }
   .promotion{
     display: none;
+  }
+  .item{
+    flex: 1 0 calc(50% - @offset);
+  }
+  main,.main{
+    order: 0;
+  }
+  .categories {
+    display: flex;
+    position: static;
+   flex-grow: 1;
+      &-title, &-list {
+        display: none;
+      }
+    }
   }
 }
