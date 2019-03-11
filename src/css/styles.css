@@ -1100,10 +1100,9 @@ footer,
   background-color: #e99cb0;
   display: grid;
   grid-auto-rows: auto;
-  grid-template-columns: repeat(4, max-content);
+  grid-template-columns: repeat(4, 1fr);
   color: white;
   position: relative;
-  justify-content: space-between;
   padding: 20px 0 0;
   box-sizing: border-box;
   margin-top: 10px;
@@ -1114,6 +1113,10 @@ footer .logo,
   grid-column: 1;
   grid-row: 1 / span 1;
   align-self: start;
+  width: calc(1280px / 12 * 3 - 20px);
+  box-sizing: border-box;
+  margin: 0 10px;
+  margin: 0;
 }
 footer .logo svg,
 .footer .logo svg {
@@ -1135,8 +1138,6 @@ footer-nav,
 .footer-nav {
   grid-row: 1 / span 1;
   width: calc(1280px / 12 * 1 - 20px);
-  box-sizing: border-box;
-  margin: 0 10px;
   margin-right: calc(1280px / 12 * 1 - 20px);
 }
 footer-nav a:hover,
@@ -1147,16 +1148,12 @@ footer .payments,
 .footer .payments {
   grid-row: 1 / span 1;
   width: calc(1280px / 12 * 2 - 20px);
-  box-sizing: border-box;
-  margin: 0 10px;
   margin-right: calc(1280px / 12 * 1 - 20px);
 }
 footer .contacts,
 .footer .contacts {
   grid-row: 1 / span 1;
   width: calc(1280px / 12 * 3 - 20px);
-  box-sizing: border-box;
-  margin: 0 10px;
   margin-right: calc(1280px / 12 * 1 - 20px);
 }
 footer::before,
