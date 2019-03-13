@@ -388,6 +388,14 @@ ul {
 figure {
   margin: 0;
 }
+#promotion-slider {
+  padding: 20px 0 10px;
+  border: 1px solid #c5c7c7;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  height: 40px;
+}
 .common {
   display: flex;
   flex-wrap: wrap;
@@ -1165,7 +1173,6 @@ footer,
   display: grid;
   grid-auto-rows: auto;
   grid-template-columns: repeat(12, 1fr);
-  grid-gap: 20px;
   color: white;
   position: relative;
   padding: 20px 0 0;
@@ -1188,6 +1195,7 @@ footer h3,
 footer .h3,
 .footer .h3 {
   border-bottom: 1px solid lightgray;
+  font-size: 24px;
 }
 footer li,
 .footer li,
