@@ -1,6 +1,7 @@
-$('.carousel').carousel({
+
+/*$('.carousel').carousel({
     interval: 2000
-})
+})*/
 let searchIcon=$('#main-search button');
 let searchField=$('#main-search input');
 searchIcon.on('focusin',function () {
