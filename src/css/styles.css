@@ -713,10 +713,18 @@ header .info .cart a:hover svg,
   header .info form,
   .header .info form {
     margin: 0;
+    position: relative;
   }
   header .info input,
   .header .info input {
     display: none;
+    position: absolute;
+    z-index: 3;
+    border-radius: 20px;
+    top: 100%;
+    right: -110%;
+    height: 30px;
+    width: 320px;
   }
   header .info button,
   .header .info button {
@@ -830,6 +838,7 @@ nav ul li:not(:last-child),
     flex-direction: column;
     width: 100%;
     padding: 0;
+    z-index: 3;
   }
   nav ul li,
   .nav ul li {

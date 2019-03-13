@@ -288,9 +288,18 @@ header, .header{
     }
       form{
         margin: 0;
+        position: relative;
       }
       input{
         display: none;
+        position: absolute;
+        z-index: 3;
+        border-radius: 20px;
+        top:100%;
+        right:-110%;
+        height: 30px;
+        width: 320px;
+
       }
       button{
         background-color: transparent;
@@ -390,6 +399,7 @@ nav,.nav{
       flex-direction: column;
       width: 100%;
       padding: 0;
+      z-index: 3;
       li {
         color: #000;
         padding: 10px;
