@@ -1,6 +1,7 @@
 .content{
   padding-top: 15px;
   display: flex;
+  margin-top: 10px;
   .aside,aside{
     flex: 0 1 calc(100% / @n * 3 - 2 * @offset);
     margin-right: @offset;
@@ -178,7 +179,6 @@ main,.main{
     order:4;
     width: 100%;
     object-fit: scale-down;
-    padding: 30px;
     //padding-bottom: 0;
     box-sizing: border-box;
     margin: auto;
@@ -225,7 +225,7 @@ main,.main{
     position: relative;
   }
    .categories{
-    display: block;
+    display: none;
     position: absolute;
     overflow-y:auto;
      top:0;
@@ -258,6 +258,18 @@ main,.main{
   .content{
     flex-direction: column;
     flex-wrap: wrap;
+    justify-content: center;
+    aside,.aside {
+      display: flex;
+      position: static;
+      max-width: 100%;
+      margin: 10px 0;
+      padding: 0;
+      .categories{
+        &-title, &-list {
+          display: none;
+        }}
+    }
   }
   .promotion{
     display: none;
@@ -267,15 +279,7 @@ main,.main{
   }
   main,.main{
     order: 0;
+    justify-content: center;
+    margin: 0;
   }
-  .content{
-  aside,.aside {
-    display: flex;
-    position: static;
-   flex: 1 0 100%;
-    .categories{
-      &-title, &-list {
-        display: none;
-      }}
-  }
-}}
+ }
