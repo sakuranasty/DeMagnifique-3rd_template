@@ -304,7 +304,7 @@ template {
   display: none;
 }
 .wrap {
-  max-width: 1300px;
+  max-width: 1280px;
   padding: 0 20px;
   margin: 0 auto;
 }
@@ -388,10 +388,6 @@ ul {
 figure {
   margin: 0;
 }
-#promotion-slider {
-  padding: 20px 0 10px;
-  border: 1px solid #c5c7c7;
-}
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
   height: 40px;
@@ -439,7 +435,7 @@ figure {
   text-decoration: underline;
 }
 .common .social {
-  margin-right: 15px;
+  margin-right: 8px;
   font-size: 20px;
 }
 .common .social li {
@@ -555,15 +551,19 @@ header .info button .icon:hover,
 }
 header .info .cart,
 .header .info .cart {
-  grid-column: 10 / span 3;
+  grid-column-start: -1;
+  grid-column-end: -4;
   grid-row: 1 / span 2;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  align-self: center;
+  align-self: end;
   border: 1px solid black;
   box-sizing: border-box;
-  margin: 20px 15px 0 22%;
+  min-width: 210px;
+  margin-top: 20px;
+  margin-left: auto;
+  padding-bottom: 3px;
 }
 header .info .cart div,
 .header .info .cart div {
@@ -590,10 +590,10 @@ header .info .cart a::after,
   background-color: #9f1900;
   position: absolute;
   right: 30%;
-  top: -20px;
+  top: -15px;
   font-size: 15px;
   color: #fff;
-  padding: 5px 10px;
+  padding: 3px 10px;
 }
 header .info .cart a:hover svg,
 .header .info .cart a:hover svg {
@@ -605,9 +605,7 @@ header .info .cart a:hover svg,
   }
   header .info .cart,
   .header .info .cart {
-    grid-column: 10 / span 3;
-    margin-left: 5%;
-    margin-right: 0;
+    min-width: 150px;
   }
   header .info .cart div,
   .header .info .cart div {
@@ -650,7 +648,7 @@ header .info .cart a:hover svg,
     align-self: end;
     font-size: 12px;
     padding: 5px 0;
-    grid-column: 10 / span 3;
+    grid-column: 9 / span 4;
     margin: 0;
   }
   header .info .cart a,
@@ -722,9 +720,9 @@ header .info .cart a:hover svg,
     z-index: 3;
     border-radius: 20px;
     top: 100%;
-    right: -110%;
+    right: -140%;
     height: 30px;
-    width: 320px;
+    width: 310px;
   }
   header .info button,
   .header .info button {
@@ -752,11 +750,12 @@ header .info .cart a:hover svg,
     order: 4;
     font-size: 30px;
     margin: 0 10px;
+    padding: 0;
   }
   header .info .cart,
   .header .info .cart {
     border: none;
-    width: auto;
+    min-width: auto;
   }
   header .info .cart a,
   .header .info .cart a {
@@ -775,6 +774,10 @@ header .info .cart a:hover svg,
   }
   header .info .cart div,
   .header .info .cart div {
+    display: none;
+  }
+  main .item-buttons__comp,
+  .main .item-buttons__comp {
     display: none;
   }
 }
@@ -803,12 +806,12 @@ nav ul,
   display: flex;
   align-items: center;
   padding: 10px 0;
-  font-size: 16px;
+  font-size: 18px;
   width: 100%;
 }
 nav ul li,
 .nav ul li {
-  padding: 3px 6%;
+  padding: 2px 5.4%;
   color: white;
   text-align: center;
 }
@@ -819,6 +822,7 @@ nav ul li:not(:last-child),
 @media screen and (max-width: 720px) {
   nav ul li,
   .nav ul li {
+    font-size: 14px;
     padding: 3px 20px;
   }
 }
@@ -827,6 +831,7 @@ nav ul li:not(:last-child),
   .nav {
     position: relative;
     display: none;
+    margin: 0;
   }
   nav ul,
   .nav ul {
@@ -849,6 +854,10 @@ nav ul li:not(:last-child),
     text-align: left;
     border-right: none;
   }
+  nav ul a,
+  .nav ul a {
+    display: block;
+  }
 }
 .content {
   padding-top: 15px;
@@ -857,14 +866,16 @@ nav ul li:not(:last-child),
 }
 .content .aside,
 .content aside {
-  flex: 0 1 calc(100% / 12 * 3 - 2 * 20px);
+  flex: 0 1 285px;
   margin-right: 20px;
 }
 .content .aside .categories-title,
 .content aside .categories-title {
   background-color: #eb4c81;
   color: white;
-  padding: 15px;
+  padding: 15px 30px;
+  font-size: 22px;
+  font-weight: normal;
 }
 .content .aside .categories-list,
 .content aside .categories-list {
@@ -873,9 +884,10 @@ nav ul li:not(:last-child),
 }
 .content .aside .categories-list li,
 .content aside .categories-list li {
-  padding: 15px 20px;
+  padding: 13px 32px;
   box-sizing: border-box;
-  border-bottom: 1px solid lightgray;
+  border: 1px solid lightgray;
+  font-size: 16px;
 }
 .content .aside .categories-list li:hover,
 .content aside .categories-list li:hover {
@@ -884,16 +896,17 @@ nav ul li:not(:last-child),
 }
 .content .aside .categories-list .icon,
 .content aside .categories-list .icon {
-  margin-right: 5px;
+  margin-right: 10px;
 }
 .content .aside .banner,
 .content aside .banner {
   width: 100%;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .content .aside .banner img,
 .content aside .banner img {
   width: 100%;
+  margin-bottom: 30px;
 }
 main,
 .main {
@@ -901,18 +914,16 @@ main,
   flex: 1 0 calc(100% / 12 * 9 - 20px);
   box-sizing: border-box;
   margin: 0 -10px;
+  padding-left: 10px;
+}
+main #promotion-slider,
+.main #promotion-slider {
+  padding: 40px 0 15px;
+  border: 1px solid lightgray;
 }
 main .promotion,
 .main .promotion {
   margin: 0 10px;
-}
-main .promotion-slider,
-.main .promotion-slider {
-  overflow: hidden;
-  height: 280px;
-  box-sizing: border-box;
-  padding: 20px 0px 10px;
-  border: 1px solid lightgray;
 }
 main .promotion-slide,
 .main .promotion-slide {
@@ -934,7 +945,8 @@ main .promotion-slide .text,
   flex-direction: column;
   margin-left: auto;
   text-align: center;
-  margin-right: 20px;
+  margin-right: 35px;
+  margin-bottom: 45px;
 }
 main .promotion-slide .text div:nth-child(2),
 .main .promotion-slide .text div:nth-child(2) {
@@ -946,7 +958,7 @@ main .promotion-slide .text div:nth-child(2),
 main .promotion-slide .text div:nth-child(3),
 .main .promotion-slide .text div:nth-child(3) {
   text-align: left;
-  margin-top: 10px;
+  margin-top: 5px;
   line-height: 20px;
   margin-left: 30px;
   font-size: 12px;
@@ -955,9 +967,10 @@ main .promotion-slide .text div:nth-child(3),
 }
 main .promotion .stat,
 .main .promotion .stat {
-  font-size: 40px;
+  font-size: 42px;
+  line-height: 40px;
   color: black;
-  margin: 20px 20px 0;
+  margin: 15px 20px 0;
   font-weight: bold;
   text-align: left;
 }
@@ -965,10 +978,11 @@ main .promotion-btn,
 .main .promotion-btn {
   text-align: left;
   align-self: flex-start;
-  margin-left: 60px;
+  margin-left: 80px;
   margin-top: 10px;
-  padding: 10px;
-  font-size: 16px;
+  margin-bottom: 20px;
+  padding: 10px 25px;
+  font-size: 18px;
   color: #ff8c58;
   font-weight: 800;
   border: 1px solid #3e69c9;
@@ -976,20 +990,20 @@ main .promotion-btn,
 main .promotion-blocks,
 .main .promotion-blocks {
   display: flex;
-  margin: 0 -10px;
-  margin-top: 10px;
+  margin: 21px -10px 10px;
 }
 main .promotion-blocks figure,
 .main .promotion-blocks figure {
-  flex: 1 1 calc(1300px / 12 * 3 - 20px);
+  flex: 1 1 calc(1280px / 12 * 3 - 20px);
   margin: 0 10px;
   border: 2px solid #b3b5b5;
   box-sizing: border-box;
-  padding: 10px;
+  padding: 15px 10px;
 }
 main .promotion-blocks figure figcaption,
 .main .promotion-blocks figure figcaption {
   font-size: 35px;
+  line-height: 35px;
   font-weight: 500;
   display: flex;
   align-items: center;
@@ -997,6 +1011,8 @@ main .promotion-blocks figure figcaption,
 main .promotion-blocks figure figcaption .icon,
 .main .promotion-blocks figure figcaption .icon {
   margin-right: 10px;
+  width: 32px;
+  height: 32px;
 }
 main .promotion-blocks figure:nth-child(1) figcaption,
 .main .promotion-blocks figure:nth-child(1) figcaption {
@@ -1018,6 +1034,7 @@ main .sale,
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-bottom: 11px;
 }
 main .new figure:before,
 .main .new figure:before,
@@ -1025,9 +1042,9 @@ main .sale figure:before,
 .main .sale figure:before {
   content: "new";
   display: block;
-  padding: 15px 10px;
-  border-radius: 30px;
-  font-size: 16px;
+  padding: 10px 7px;
+  border-radius: 40px;
+  font-size: 12px;
   position: absolute;
   top: 0;
   left: 0;
@@ -1041,7 +1058,7 @@ main .new .h2,
 .main .new .h2,
 main .sale .h2,
 .main .sale .h2 {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
   padding: 10px 0 5px;
   display: block;
@@ -1053,12 +1070,9 @@ main .sale .h2,
 .item {
   display: flex;
   flex-direction: column-reverse;
-  flex-basis: calc(1300px / 12 * 2 - 20px);
-  box-sizing: border-box;
+  flex: 0 1 calc((1280px - 2 * 20px) / 12 * 2);
   margin: 0 10px;
-  flex-grow: 0;
-  flex-shrink: 0;
-  padding: 10px;
+  padding: 8px;
   text-align: center;
   border: 1px solid lightgray;
   position: relative;
@@ -1073,6 +1087,9 @@ main .sale .h2,
 }
 .item-title {
   order: 3;
+  font-size: 18px;
+  font-weight: 300;
+  margin-top: 25px;
 }
 .item-price {
   order: 2;
@@ -1088,14 +1105,18 @@ main .sale .h2,
 .item-buttons div {
   background-color: #3e69c9;
   color: white;
-  padding: 5px 10px;
+  padding: 8px 0;
 }
 .item-buttons__cart {
   border-right: 2px solid white;
   flex-grow: 1;
 }
 .item-buttons__cart .icon {
-  margin-right: 10px;
+  margin-right: 8px;
+}
+.item-buttons__comp {
+  padding: 0 5px;
+  flex-grow: 1;
 }
 .new figure:before {
   background-color: #9f1900;
@@ -1110,7 +1131,6 @@ main .sale .h2,
   .categories {
     display: none;
     position: absolute;
-    overflow-y: auto;
     top: 0;
     left: 0;
     z-index: 2;
@@ -1118,6 +1138,15 @@ main .sale .h2,
     max-width: 300px;
     height: 100%;
     padding-right: 10px;
+  }
+  #promotion-slider {
+    padding-bottom: 10px;
+  }
+  #promotion-slider .stat {
+    font-size: 30px;
+  }
+  #promotion-slider .text {
+    margin-bottom: 0;
   }
 }
 @media screen and (max-width: 720px) {
@@ -1186,7 +1215,7 @@ footer,
   position: relative;
   padding: 20px 0 0;
   box-sizing: border-box;
-  margin-top: 10px;
+  margin-top: 40px;
 }
 footer .logo,
 .footer .logo {
@@ -1204,13 +1233,15 @@ footer h3,
 footer .h3,
 .footer .h3 {
   border-bottom: 1px solid lightgray;
-  font-size: 24px;
+  font-size: 20px;
 }
 footer li,
 .footer li,
 footer address,
 .footer address {
-  padding: 5px 0;
+  padding: 3px 0;
+  line-height: 18px;
+  margin-bottom: 0;
 }
 footer-nav,
 .footer-nav {
@@ -1255,11 +1286,12 @@ small {
   grid-column-end: -1;
   flex-grow: 1;
   background-color: #000;
-  padding: 5px 0;
+  padding: 8px 0;
   text-align: center;
   color: white;
   font-size: 14px;
   position: relative;
+  margin-top: 50px;
 }
 small::before {
   content: '';

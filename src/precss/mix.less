@@ -1,4 +1,4 @@
-@wrap_width: 1300px;
+@wrap_width: 1280px;
 @red: #f5001d;
 @black: #000404;
 @white: #ffffff;
@@ -22,7 +22,7 @@
 	box-shadow: inset 0 0 0 10px rgba(29, 157, 115, 0.35);
 }
 .size(@n, @col, @offs){
-	flex-basis: calc(@wrap_width / @n * @col - @offs);
+	flex-basis: calc((@wrap_width - 2 * @offset) / @n * @col - @offs);
 	box-sizing:border-box;
 	margin: 0 @offs / 2;
 }

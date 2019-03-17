@@ -27,7 +27,7 @@ gulp.task('styles', styles);
 
 gulp.task('watch', function(){
 	browserSync.init({
-       proxy: "MyLouboutin.loc"
+       server: true
     });
 
 	gulp.watch('./src/precss/**/*.less', styles);

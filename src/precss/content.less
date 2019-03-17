@@ -3,13 +3,15 @@
   display: flex;
   margin-top: 10px;
   .aside,aside{
-    flex: 0 1 calc(100% / @n * 3 - 2 * @offset);
+    flex: 0 1 285px;
     margin-right: @offset;
     .categories{
       &-title{
         background-color: @rosepink;
         color: white;
-        padding: 15px;
+        padding: 15px 30px;
+        font-size: 22px;
+        font-weight: normal;
         //border: 1px solid lightgray;
       }
       &-list{
@@ -17,24 +19,26 @@
         background-color: @lightgray;
         //border: 1px solid lightgray;
         li{
-          padding: 15px 20px;
+          padding: 13px 32px;
           box-sizing: border-box;
-          border-bottom: 1px solid lightgray;
+          border: 1px solid lightgray;
+          font-size: 16px;
           &:hover{
             background-color: @rosepink;
             color: white;
           }
         }
         .icon{
-          margin-right: 5px;
+          margin-right: 10px;
         }
       }
     }
     .banner{
       width: 100%;
-      margin-top: 20px;
+      margin-top: 10px;
       img{
         width: 100%;
+        margin-bottom: 30px;
       }
     }
   }
@@ -43,16 +47,14 @@ main,.main{
   order: 1;
   flex:1 0 calc(100% / 12 * 9 - 20px);
   box-sizing: border-box;
-  margin:0 -@offset_one_side;
+  margin: 0 -@offset_one_side;
+  padding-left: 10px;
+  #promotion-slider{
+    padding: 40px 0 15px;
+    border: 1px solid lightgray;
+  }
   .promotion{
     margin: 0 @offset_one_side;
-    &-slider{
-      overflow:hidden;
-      height: 280px;
-      box-sizing: border-box;
-      padding: 20px 0px 10px;
-      border: 1px solid lightgray;
-    }
     &-slide{
       width: 100%;
       text-align: right;
@@ -69,7 +71,8 @@ main,.main{
         flex-direction: column;
         margin-left: auto;
         text-align: center;
-        margin-right: 20px;
+        margin-right: 35px;
+        margin-bottom: 45px;
         div:nth-child(2){
           font-size: 20px;
           text-transform: uppercase;
@@ -78,7 +81,7 @@ main,.main{
         }
         div:nth-child(3){
           text-align: left;
-          margin-top: 10px;
+          margin-top: 5px;
           line-height: 20px;
           margin-left: 30px;
           font-size: 12px;
@@ -88,40 +91,45 @@ main,.main{
       }
     }
     .stat{
-      font-size: 40px;
+      font-size: 42px;
+      line-height: 40px;
       color: black;
-      margin: 20px 20px 0;
+      margin: 15px 20px 0;
       font-weight: bold;
       text-align: left;
     }
     &-btn{
       text-align: left;
       align-self: flex-start;
-      margin-left: 60px;
+      margin-left: 80px;
       margin-top: 10px;
-      padding: 10px;
-      font-size: 16px;
+      margin-bottom: 20px;
+      padding: 10px 25px;
+      font-size: 18px;
       color: #ff8c58;
       font-weight: 800;
       border: 1px solid @skyblue;
     }
     &-blocks{
       display: flex;
-      margin: 0 -@offset_one_side;
-      margin-top: 10px;
+      margin: 21px -@offset_one_side 10px;
       figure{
         flex:1 1 calc(@wrap_width / 12 * 3 - @offset);
         margin: 0 @offset_one_side;
         border: 2px solid #b3b5b5;
         box-sizing: border-box;
-        padding: 10px;
+        padding: 15px 10px;
         figcaption{
           font-size: 35px;
+          line-height: 35px;
           font-weight: 500;
           display: flex;
           align-items: center;
           .icon{
+            @h:32px;
             margin-right: 10px;
+            width: @h;
+            height: @h;
           }
         }
         &:nth-child(1) figcaption{
@@ -141,19 +149,20 @@ main,.main{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-bottom: 11px;
     figure:before{
       content: "new";
       display: block;
-      padding: 15px 10px;
-      border-radius: 30px;
-      font-size: 16px;
+      padding: 10px 7px;
+      border-radius: 40px;
+      font-size: 12px;
       position: absolute;
       top:0;
       left:0;
       color: #fff;
     }
     h2,.h2{
-      font-size: 20px;
+      font-size: 24px;
       font-weight: 500;
       padding: 10px 0 5px;
       display: block;
@@ -167,10 +176,9 @@ main,.main{
 .item{
   display: flex;
   flex-direction: column-reverse;
-  .size(@n, 2, @offset);
-  flex-grow: 0;
-  flex-shrink: 0;
-  padding: 10px;
+  flex: 0 1 calc((@wrap_width - 2 * @offset) / @n * 2);
+  margin: 0 @offset_one_side;
+  padding: 8px;
   text-align: center;
   border: 1px solid lightgray;
   position: relative;
@@ -185,6 +193,9 @@ main,.main{
   }
   &-title{
     order:3;
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 25px;
   }
   &-price{
     order:2;
@@ -199,14 +210,18 @@ main,.main{
     div{
       background-color: @skyblue;
       color: white;
-      padding: 5px 10px;
+      padding: 8px 0;
     }
     &__cart{
       border-right: 2px solid white;
       flex-grow: 1;
-      .icon{
-        margin-right: 10px;
+      .icon {
+        margin-right: 8px;
       }
+    }
+    &__comp{
+      padding: 0 5px;
+      flex-grow: 1;
     }
   }
 }
@@ -227,7 +242,6 @@ main,.main{
    .categories{
     display: none;
     position: absolute;
-    overflow-y:auto;
      top:0;
      left: 0;
      z-index: 2;
@@ -236,6 +250,15 @@ main,.main{
      height: 100%;
      padding-right: 10px;
   }
+   #promotion-slider{
+     padding-bottom: 10px;
+     .stat{
+       font-size: 30px;
+     }
+     .text{
+       margin-bottom: 0;
+     }
+   }
 }
 @media screen and (max-width: 720px){
   main,.main{
